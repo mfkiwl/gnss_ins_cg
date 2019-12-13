@@ -6,8 +6,16 @@
 
 [TOC]
 
-* 确定性误差：可以事先标定确定,包括：bias, scale，Nonorthogonality/Misalignment Errors
-* 随机性误差：通常假设噪声服从高斯分布，包括：高斯白噪声，bias随机游走
+* 确定性误差（六面法 标定）
+  - 开机后恒定的零偏误差（bias）
+  - 比例因子误差（scale factor）
+  - 轴偏及非正交误差（misalignment errors and non-orthogonality）
+  - 非线性误差（non-linearity）
+  - 温度误差（thermal noise）
+  - 陀螺仪还包含加速度的变化引起的误差（g-dependent noise）
+* 随机性误差（Allan方差 标定）
+  - 高斯白噪声（Noise Density）
+  - 零偏不稳定性（Bias Instability or Random Walk）
 
 <div align=center>
   <img src="../images/error_acc.png">
@@ -28,8 +36,8 @@ Parameter | YAML element | Symbol | Units
 --- | --- | --- | ---
 Gyroscope "white noise" | `gyr_n` | <img src="https://latex.codecogs.com/svg.latex?{%5Csigma_g}"> | <img src="https://latex.codecogs.com/svg.latex?{%5Cfrac%7Brad%7D%7Bs%7D%5Cfrac%7B1%7D%7B%5Csqrt%7BHz%7D%7D}">
 Accelerometer "white noise" | `acc_n` | <img src="https://latex.codecogs.com/svg.latex?{%5Csigma_a}"> | <img src="https://latex.codecogs.com/svg.latex?{%5Cfrac%7Bm%7D%7Bs^2%7D%5Cfrac%7B1%7D%7B%5Csqrt%7BHz%7D%7D}">
-Gyroscope "bias Instability" | `gyr_w` | <img src="https://latex.codecogs.com/svg.latex?{%5Csigma_b_g}"> | <img src="https://latex.codecogs.com/svg.latex?{%5Cfrac%7Brad%7D%7Bs^2%7D%5Cfrac%7B1%7D%7B%5Csqrt%7BHz%7D%7D}" />
-Accelerometer "bias Instability" | `acc_w` | <img src="https://latex.codecogs.com/svg.latex?{%5Csigma_b_a}"> | <img src="https://latex.codecogs.com/svg.latex?{%5Cfrac%7Bm%7D%7Bs^3%7D%5Cfrac%7B1%7D%7B%5Csqrt%7BHz%7D%7D}"/>
+Gyroscope "bias Instability" or "random walk" | `gyr_w` | <img src="https://latex.codecogs.com/svg.latex?{%5Csigma_b_g}"> | <img src="https://latex.codecogs.com/svg.latex?{%5Cfrac%7Brad%7D%7Bs^2%7D%5Cfrac%7B1%7D%7B%5Csqrt%7BHz%7D%7D}" />
+Accelerometer "bias Instability" or "random walk" | `acc_w` | <img src="https://latex.codecogs.com/svg.latex?{%5Csigma_b_a}"> | <img src="https://latex.codecogs.com/svg.latex?{%5Cfrac%7Bm%7D%7Bs^3%7D%5Cfrac%7B1%7D%7B%5Csqrt%7BHz%7D%7D}"/>
 IMU sampling rate | `update_rate` | <img src="https://latex.codecogs.com/svg.latex?{%5Cfrac%7B1%7D%7B%5CDelta%20t%7D}"> | <img src="https://latex.codecogs.com/svg.latex?{Hz}">
 
 **Ref**:   
@@ -43,11 +51,11 @@ IMU sampling rate | `update_rate` | <img src="https://latex.codecogs.com/svg.lat
 #### the Datasheet of the IMU
 
 * White Noise Terms
-  - **Rate Noise Density**
-  - **Acceleration Noise Density**
+  - **Rate Noise Density (Angular Random Walk - ARW)**
+  - **Acceleration Noise Density (Velocity Random Walk - VRW)**
 
 * Bias Terms
-  - **In-Run Bias Stability**
+  - **In-Run Bias (Bias Stability)**
 
 #### the Allan standard deviation (AD)
 

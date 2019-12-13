@@ -34,4 +34,8 @@ The key difference between an IMU and an AHRS is the addition of an on-board pro
 
 * [cggos/imu_tools_cg](https://github.com/cggos/imu_tools_cg.git): ROS tools for IMU devices
 
-* [IMU-sensor-fusion-with-linear-Kalman-filter (mathworks)](https://www.mathworks.com/matlabcentral/fileexchange/70093-imu-sensor-fusion-with-linear-kalman-filter): Reads IMU sensor (acceleration and velocity) wirelessly from the IOS app 'Sensor Stream' to a Simulink model and filters an orientation angle in degrees using a linear Kalman filter. 
+* [IMU-sensor-fusion-with-linear-Kalman-filter (mathworks)](https://www.mathworks.com/matlabcentral/fileexchange/70093-imu-sensor-fusion-with-linear-kalman-filter): Reads IMU sensor (acceleration and velocity) wirelessly from the IOS app 'Sensor Stream' to a Simulink model and filters an orientation angle in degrees using a linear Kalman filter.
+
+# Dead Reckoning
+
+In navigation, dead reckoning is the process of calculating one's current position by using a previously determined position, or fix, and advancing that position based upon known or estimated speeds over elapsed time and course. 
