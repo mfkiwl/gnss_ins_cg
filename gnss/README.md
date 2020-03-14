@@ -14,6 +14,13 @@ GNSS Systems:
 
 -----
 
+# GNSS Coordinates
+
+* ECEF（地心地固坐标系）
+* ECI（惯性坐标系）
+* LLA 坐标系：Longitude（经度）、Latitude（纬度）和 Altitude（高度）
+* 站心坐标系：ENU（东北天坐标系）、NED（北东地坐标系）
+
 # RTK
 
 DGPS stands for Differential GPS. It is the GPS signal corrected by ground reference stations (which can estimate the ionosphere error on the GPS signal). Traditionally, DGPS accuracy can go down to sub-meter level. RTK technique allows DGPS accuracy to be at centimeter-level.
